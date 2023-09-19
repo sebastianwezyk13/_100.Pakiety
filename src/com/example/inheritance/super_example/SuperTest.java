@@ -4,7 +4,7 @@ public class SuperTest {
     public static void main(String[] args) {
         Student student = new Student("Ania", "Kowalska", 5);
         Teacher teacher = new Teacher("Adam", "dobry", "math");
-        Director director = new Director("Seba", "Waz", 2);
+        Director director = new Director("Seba", "Wazy", 2);
 
         System.out.println(teacher.getTeachingSubject());
     }
