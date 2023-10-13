@@ -1,6 +1,4 @@
-package com.example.inheritance.polymorphism_basics;
-
-import java.awt.color.CMMException;
+package com.example.inheritance.polymorphism_casting;
 
 class Employee {
     private String name;
@@ -114,22 +112,23 @@ class Ceo extends Manager {
     }
 }
 
-public class Company {
+public class CompanyCastingExample {
     public static void main(String[] args) {
         Employee employee = new Employee("Ada","Programista",10000);
         Manager manager = new Manager("Kasia","Team leader", 5000, "R&D");
 
-        Ceo ceo = new Ceo("Radek","Prezes",20000,"Board", 100);
+        Employee employeeCeo = new Ceo("Radek","Prezes",20000,"Board", 100);
 
 
-        Employee worker = ceo;
-        worker.doWork();
-        worker.printInfo();  // Ceo: Radek z klasy Ceo, wizanie dynamiczne
+        employeeCeo = manager;
 
-        ceo.signConcrat();
-        ceo.printInfo(); // Ceo: Radek
-        Manager person = ceo;
-        person.hireEmployee();
-        person.printInfo(); // Ceo: Radek
+       // employeeCeo.signContract();
+
+        if(employeeCeo instanceof Ceo) {
+            Ceo ceo = (Ceo)employeeCeo;
+            ceo.signConcrat();
+
+        }
+
     }
 }
